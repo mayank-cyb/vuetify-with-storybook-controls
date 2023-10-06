@@ -1,0 +1,106 @@
+@import '@/styles/variables.scss';
+.v-main {
+  .v-btn {
+      min-width: 5.5rem;
+      //min-height: 2rem;
+      max-height: 2rem;
+      border-radius: 2rem;
+      font-family: $fontRoboto;
+      font-weight: $bold;
+      font-size: 1rem;
+      line-height: 1.125rem;
+      letter-spacing: 0;
+      text-transform: none;
+      padding: 0 1rem;
+      &--size-small {
+          max-height: 1.3125rem;
+      }
+  }
+}
+
+.btn {
+    &-primary {
+        min-width: 5.5rem;
+        background-color: $colorPrimary !important;
+        // height: 2rem;
+        // border-radius: 2rem;
+      &.on-hover {
+        background-color: $colorPrimaryHover !important;
+      }  
+      &.disabled {
+        background-color: $colorPrimaryDisabled !important;
+      }
+      &--outline {
+        border: 0.125rem solid $colorPrimary !important;
+        background-color: transparent !important;
+        color: $colorPrimary !important;
+      }
+    }
+    &-secondary {
+        min-width: 6.75rem;
+        background-color: $colorSecondary !important;
+      &.on-hover {
+        background-color: $colorSecondaryHover !important;
+      }  
+      &.disabled {
+        background-color: $colorSecondaryDisabled !important;
+      }
+      &--outline {
+        border: 0.125rem solid $colorSecondary !important;
+        background-color: transparent !important;
+        color: $colorSecondary !important;
+      }
+    }
+    &-success {
+      min-width: 6.75rem;
+      background-color: $colorSuccess !important;
+      &.on-hover {
+        background-color: $colorSuccessHover !important;
+      }  
+      &.disabled {
+        background-color: $colorSuccessDisabled !important;
+      }
+      &--outline {
+        border: 0.125rem solid $colorSuccess!important;
+        background-color: transparent !important;
+        color: $colorSuccess !important;
+      }
+    }
+    &-warning {
+      min-width: 6.75rem;
+      background-color: #FC9E09 !important;
+      &.on-hover {
+        background-color: #CC7D00 !important;
+      }  
+      &.disabled {
+        background-color: #FDC56C !important;
+      }
+      &--outline {
+        border: 0.125rem solid $colorPrimary !important;
+        background-color: transparent !important;
+        color: $colorPrimary !important;
+      }
+    }
+    &-danger {
+      min-width: 6.75rem;
+      background-color: #ED0F0F !important;
+      &.on-hover {
+        background-color: #C60808 !important;
+      }  
+      &.disabled {
+        background-color: #ED6767 !important;
+      }
+      &--outline {
+        border: 0.125rem solid $colorPrimary !important;
+        background-color: transparent !important;
+        color: $colorPrimary !important;
+      }
+    }
+}
+.btn-primary,
+.btn-secondary,
+.btn-success,
+.btn-warning,
+.btn-danger {
+
+}

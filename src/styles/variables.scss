@@ -1,0 +1,40 @@
+// @use 'vuetify' with (
+//   $variable: false,
+// );
+
+
+//Controls color scheme
+//Primary Controls
+$colorPrimary: #2D7FBC;
+$colorPrimaryHover: #2B6590;
+$colorPrimaryDisabled: #8BB5D4;
+
+//Secondary Controls
+$colorSecondary: #728DA2;
+$colorSecondaryHover: #2B6590;
+$colorSecondaryDisabled: #8BB5D4;
+
+//Success Controls
+$colorSuccess: #28A745;
+$colorSuccessHover: #218838;
+$colorSuccessDisabled: #74C686;
+
+//Warning Controls
+$colorSecondary: #FC9E09;
+$colorSecondaryHover: #CC7D00;
+$colorSecondaryDisabled: #FDC56C;
+
+//Danger Controls
+$colorSecondary: #728DA2;
+$colorSecondaryHover: #2B6590;
+$colorSecondaryDisabled: #8BB5D4;
+
+//font-family
+$fontRoboto: 'Roboto', sans-serif;
+
+
+//font-weights
+$light: 300;
+$medium: 400;
+$bold: 700;
+$black: 900;
