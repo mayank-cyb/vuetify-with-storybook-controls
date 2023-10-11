@@ -32,6 +32,7 @@ export default {
 // More on writing stories with args: https://storybook.js.org/docs/vue/writing-stories/args
 export const Button = {
   args: {
+    primary: true,
     label: 'Button',
     btnType: 'primary',
     options: 'large',

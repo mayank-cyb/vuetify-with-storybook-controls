@@ -3,6 +3,10 @@
 // );
 
 
+$colorWhite: #FFFFFF;
+$colorBlack: #000000;
+$lsx_background_dark: #033962;
+
 //Controls color scheme
 //Primary Controls
 $colorPrimary: #2D7FBC;
@@ -20,14 +24,19 @@ $colorSuccessHover: #218838;
 $colorSuccessDisabled: #74C686;
 
 //Warning Controls
-$colorSecondary: #FC9E09;
-$colorSecondaryHover: #CC7D00;
-$colorSecondaryDisabled: #FDC56C;
+$colorWarning: #FC9E09;
+$colorWarningHover: #CC7D00;
+$colorWarningDisabled: #FDC56C;
 
 //Danger Controls
-$colorSecondary: #728DA2;
-$colorSecondaryHover: #2B6590;
-$colorSecondaryDisabled: #8BB5D4;
+$colorDanger: #ED0F0F;
+$colorDangerHover: #C60808;
+$colorDangerDisabled: #ED6767;
+
+//Info Controls
+$colorInfo: #3EADCE;
+$colorInfoHover: #21819D;
+$colorInfoDisabled: #67C3D0;
 
 //font-family
 $fontRoboto: 'Roboto', sans-serif;

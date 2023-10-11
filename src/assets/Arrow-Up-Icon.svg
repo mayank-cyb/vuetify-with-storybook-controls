@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <g id="Arrow-Up-Icon" transform="translate(-869 -1170)">
+    <g id="Group_4479" data-name="Group 4479">
+      <rect id="Rectangle_3344" data-name="Rectangle 3344" width="24" height="24" transform="translate(869 1170)" fill="none"/>
+    </g>
+    <g id="Group_4480" data-name="Group 4480" transform="translate(1761.793 2364.284) rotate(180)">
+      <path id="Rectangle_3345" data-name="Rectangle 3345" d="M0,0H13a1,1,0,0,1,1,1V1a1,1,0,0,1-1,1H0A0,0,0,0,1,0,2V0A0,0,0,0,1,0,0Z" transform="translate(879.482 1186.385) rotate(-45)"/>
+      <path id="Rectangle_3346" data-name="Rectangle 3346" d="M0,0H13a1,1,0,0,1,1,1V1a1,1,0,0,1-1,1H0A0,0,0,0,1,0,2V0A0,0,0,0,1,0,0Z" transform="translate(880.896 1187.799) rotate(-135)"/>
+    </g>
+  </g>
+</svg>

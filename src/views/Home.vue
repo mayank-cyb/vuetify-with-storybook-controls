@@ -1,17 +1,21 @@
 <template>
   <div class="btn-wrapper">
-    <button-default-primary 
-      :text="'Primary'"
-    />
-    <button-default-secondary 
-      :text="'Secondary'"
+    <hello-world/>
+    <circular-button
+      btnType="primary"
+      size="large"
+      :isDisabled="false"
+      class="icon-only"
+      prependIcon=""
+      appendIcon=""
+      image="src/assets/Top-Nav-Bell.svg"
     />
   </div>
 </template>
 
 <script setup>
-  import ButtonDefaultPrimary from '@/components/buttons/ButtonDefaultPrimary.vue';
-  import ButtonDefaultSecondary from '@/components/buttons/ButtonDefaultSecondary.vue';
+  import CircularButton from '@/stories/CircularButton.vue';
+  import HelloWorld from '@/components/HelloWorld.vue';
 </script>
 
 <style lang="scss">

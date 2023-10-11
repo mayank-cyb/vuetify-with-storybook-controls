@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" role="img">
+  <title>Order Kiosk Icon</title>
+  <g id="order-kiosk-icon" transform="translate(-111 -740)">
+    <g id="Group_3819" data-name="Group 3819" transform="translate(-901 550)">
+      <rect id="Rectangle_2928" data-name="Rectangle 2928" width="24" height="24" transform="translate(1012 190)" fill="none"/>
+      <g id="Group_3820" data-name="Group 3820" transform="translate(1.5 2)">
+        <rect id="Rectangle_2601" data-name="Rectangle 2601" width="14" height="4" rx="1" transform="translate(1015.5 204)"/>
+        <path id="Subtraction_2" data-name="Subtraction 2" d="M15,11H1a1,1,0,0,1-1-1V1A1,1,0,0,1,1,0H15a1,1,0,0,1,1,1v9A1,1,0,0,1,15,11ZM2,2V9H14V2Z" transform="translate(1014.499 192)"/>
+      </g>
+    </g>
+  </g>
+</svg>

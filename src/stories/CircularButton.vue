@@ -1,27 +1,51 @@
 <template>
   <!--button type="button" :class="classes" @click="onClick" :style="style">{{ label }}</button-->
   <!--v-btn type="button" color="primary" @click="onClick" :variant="variant" :size="size">{{
-    label
-  }}</v-btn-->
+      label
+    }}</v-btn-->
   <v-hover v-slot="{ isHovering, props }">
     <v-btn
       color="#2D7FBC"
       :size="size"
-      :disabled="disabled"
-      variant="flat"
-      class="btn-rectangle"
+      justify="centre"
+      class="btn-circle"
       :class="[
         `${btnClass}--${btnAppearance}`,
-        `size-${size}`,
+        `btn-circle--size-${size}`,
         btnClass,
         btnAppearance,
-        { 'disabled': isDisabled },
+        { disabled: isDisabled },
         { 'on-hover': isHovering },
+        { 'multi-line': label && (prependIcon || appendIcon || image) },
+        { 'icon-only': prependIcon || appendIcon },
+        { 'text-only': label && !(prependIcon || appendIcon || image) },
       ]"
-      @click="onClick(btnClass)"
       v-bind="props"
+      :prepend-icon="prependIcon"
+      :append-icon="appendIcon"
+      :image="image"
     >
-      {{ label }}
+      <template v-slot:prepend>
+        <v-icon center></v-icon>
+      </template>
+
+      <template v-if="image && !label">
+        <v-avatar>
+          <v-img :src="image" alt="Icon"></v-img>
+        </v-avatar>
+      </template>
+      <template v-else-if="label && image">
+        {{ label }}
+        <v-avatar>
+          <v-img :src="image" alt="Icon"></v-img>
+        </v-avatar>
+      </template>
+      <template v-else>
+        {{ label }}
+      </template>
+      <template v-slot:append>
+        <v-icon center></v-icon>
+      </template>
     </v-btn>
   </v-hover>
 </template>
@@ -30,14 +54,16 @@
 //import './button.css';
 import "./button.scss";
 import { reactive, computed } from "vue";
+import Icon from "./Icon.vue";
 
 export default {
-  name: "my-button",
-
+  name: "circular-button",
+  components: {
+    Icon,
+  },
   props: {
     label: {
       type: String,
-      required: true,
     },
     size: {
       type: String,
@@ -54,17 +80,34 @@ export default {
     },
     isDisabled: {
       type: Boolean,
-      default: false
+      default: false,
     },
     btnType: {
       type: String,
       validator: function (value) {
         return (
-          ["primary", "secondary", "success", "warning", "danger", "info"].indexOf(
-            value
-          ) !== -1
+          [
+            "primary",
+            "secondary",
+            "success",
+            "warning",
+            "danger",
+            "info",
+          ].indexOf(value) !== -1
         );
       },
+    },
+    prependIcon: {
+      type: String,
+      default: "",
+    },
+    appendIcon: {
+      type: String,
+      default: "",
+    },
+    image: {
+      type: String,
+      default: "",
     },
   },
 
@@ -98,11 +141,8 @@ export default {
           : "btn-primary";
       }),
       btnAppearance: computed(() => props.appearance),
-      style: computed(() => ({
-        backgroundColor: props.backgroundColor,
-      })),
-      onClick(btnClass) {
-        emit('click', btnClass);
+      onClick() {
+        emit("click");
       },
     };
   },

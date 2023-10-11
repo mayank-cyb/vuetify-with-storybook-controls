@@ -28,12 +28,20 @@
         <!--my-button btnType="primary" size="small" @click="$emit('logout')" label="Log out" v-if="user" />
         <my-button btnType="secondary" size="small" @click="$emit('login')" label="Log in" v-if="!user" /-->
         <my-button
-          btnType="success"
-          size="small"
-          appearance="outline"
+          btnType="primary"
+          :isDisabled="false"
           @click="$emit('createAccount')"
           label="Sign up"
           v-if="!user"
+        />
+        <circular-button
+          btnType="primary"
+          size="large"
+          :isDisabled="false"
+          class="icon-only"
+          prependIcon="mdi-calendar"
+          appendIcon="mdi-clock"
+          image="src/stories/assets/Top-Nav-Bell.svg"
         />
       </div>
     </div>
@@ -43,11 +51,16 @@
 <script>
 import './header.css';
 import MyButton from './Button.vue';
+import CircularButton from './CircularButton.vue';
+//import top-nav-ball from '@/src/stories/assets/Top-Nav-Ball.svg';
 
 export default {
   name: 'my-header',
 
-  components: { MyButton },
+  components: { 
+    MyButton,
+    CircularButton
+  },
 
   props: {
     user: {

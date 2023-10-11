@@ -24,6 +24,9 @@ export default {
     // More on how to position stories at: https://storybook.js.org/docs/vue/configure/story-layout
     layout: 'fullscreen',
   },
+  argTypes: {
+    onClick: { action: 'click detected in header' },
+  }
 };
 
 export const LoggedIn = {
