@@ -6,6 +6,7 @@ const config = {
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
     "@storybook/addon-actions",
+    "@storybook/addon-mdx-gfm"
   ],
   framework: {
     name: "@storybook/vue3-vite",

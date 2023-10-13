@@ -34,14 +34,18 @@
           label="Sign up"
           v-if="!user"
         />
-        <circular-button
+        <lsx-circular-button
           btnType="primary"
           size="large"
           :isDisabled="false"
-          class="icon-only"
           prependIcon="mdi-calendar"
           appendIcon="mdi-clock"
           image="src/stories/assets/Top-Nav-Bell.svg"
+        />
+        <lsx-count-button
+          btnType="primary"
+          size="large"
+          :isDisabled="false"
         />
       </div>
     </div>
@@ -51,7 +55,8 @@
 <script>
 import './header.css';
 import MyButton from './Button.vue';
-import CircularButton from './CircularButton.vue';
+import LSXCircularButton from './LSXCircularButton.vue';
+import LSXCountButton from './LSXCountButton.vue';
 //import top-nav-ball from '@/src/stories/assets/Top-Nav-Ball.svg';
 
 export default {
@@ -59,7 +64,8 @@ export default {
 
   components: { 
     MyButton,
-    CircularButton
+    LSXCircularButton,
+    LSXCountButton
   },
 
   props: {

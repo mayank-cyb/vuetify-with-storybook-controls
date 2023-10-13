@@ -1,7 +1,7 @@
 <template>
   <div class="btn-wrapper">
     <hello-world/>
-    <circular-button
+    <lsx-circular-button
       btnType="primary"
       size="large"
       :isDisabled="false"
@@ -14,8 +14,11 @@
 </template>
 
 <script setup>
-  import CircularButton from '@/stories/CircularButton.vue';
+  import LSXCircularButton from '@/stories/LSXCircularButton.vue';
   import HelloWorld from '@/components/HelloWorld.vue';
+  components: {
+    LSXCircularButton
+  }
 </script>
 
 <style lang="scss">

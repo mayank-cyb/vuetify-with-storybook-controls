@@ -7,7 +7,6 @@
     <v-btn
       color="#2D7FBC"
       :size="size"
-      justify="centre"
       class="btn-circle"
       :class="[
         `${btnClass}--${btnAppearance}`,
@@ -23,7 +22,6 @@
       v-bind="props"
       :prepend-icon="prependIcon"
       :append-icon="appendIcon"
-      :image="image"
     >
       <template v-slot:prepend>
         <v-icon center></v-icon>

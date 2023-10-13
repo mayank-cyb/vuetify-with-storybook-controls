@@ -1,9 +1,10 @@
-import CircularButton from './CircularButton.vue';
+import BarButton from './LSXBarButton.vue';
+import { action } from '@storybook/addon-actions';
 
 // More on how to set up stories at: https://storybook.js.org/docs/vue/writing-stories/introduction
 export default {
-  title: 'Example/CircleButton',
-  component: CircularButton,
+  title: 'Example/BarButton',
+  component: BarButton,
   tags: ['autodocs'],
   argTypes: {
     appearance: {
@@ -23,33 +24,16 @@ export default {
       control: {
         type: 'select',
       },
-      options: ['small', 'medium', 'large'],
+      options: ['small', 'large'],
     },
-    prependIcon: {
-      control: {
-        type: 'select'
-      }, 
-      options: ['', 'mdi-check-circle', 'mdi-account-circle'],
-    },
-    appendIcon: {
-      control: {
-        type: 'select'
-      },
-      options: ['', 'mdi-calendar', 'mdi-clock', "src/stories/assets/Arrow-Up-Icon.svg", "src/stories/assets/Arrow-Down-Icon.svg"],
-    },
-    image: 'src/assets/Top-Nav-Bell.svg'
   },
 };
 
 // More on writing stories with args: https://storybook.js.org/docs/vue/writing-stories/args
 export const Button = {
   args: {
-    primary: true,
-    label: '',
+    label: 'Button',
     btnType: 'primary',
     options: 'large',
-    prependIcon: '',
-    appendIcon: '',
-    image: 'src/assets/Top-Nav-Bell.svg'
   },
 };
