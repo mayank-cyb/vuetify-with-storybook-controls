@@ -34,11 +34,6 @@
         type: String,
         required: true,
       },
-      orderCount: {
-        type: Number,
-        required: true,
-        default: 0
-      },
       btnType: {
         type: String,
         validator: function (value) {

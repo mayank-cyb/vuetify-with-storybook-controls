@@ -10,15 +10,16 @@
         variant="flat"
         class="btn-bar"
         :class="[
-          `${btnClass}--${btnAppearance}`,
           btnClass,
-          btnAppearance,
           { 'on-hover': isHovering },
         ]"
         @click="onClick(btnClass)"
         v-bind="props"
       >
-        {{ label }}
+        <span>{{ label }}</span>
+        <v-avatar>
+          <v-img :src="imgPath" alt="Icon"></v-img>
+        </v-avatar>
       </v-btn>
     </v-hover>
   </template>
@@ -36,23 +37,6 @@
         type: String,
         required: true,
       },
-      size: {
-        type: String,
-        validator: function (value) {
-          return ["small", "large"].indexOf(value) !== -1;
-        },
-      },
-      appearance: {
-        type: String,
-        default: "default",
-        validator: function (value) {
-          return ["default", "outline"].indexOf(value) !== -1;
-        },
-      },
-      isDisabled: {
-        type: Boolean,
-        default: false
-      },
       btnType: {
         type: String,
         validator: function (value) {
@@ -63,6 +47,10 @@
           );
         },
       },
+      imgPath: {
+        type: String,
+        default: ''
+      }
     },
   
     emits: ["click"],
@@ -72,12 +60,6 @@
       console.log(props);
       return {
         props,
-        // classes: computed(() => ({
-        //   'storybook-button': true,
-        //   'storybook-button--primary': props.primary,
-        //   'storybook-button--secondary': !props.primary,
-        //   [`storybook-button--${props.size || 'medium'}`]: true,
-        // })),
         btnClass: computed(() => {
           //console.log(props.btnType)
           return props.btnType === "primary"
@@ -94,10 +76,6 @@
             ? "btn-info"
             : "btn-primary";
         }),
-        btnAppearance: computed(() => props.appearance),
-        style: computed(() => ({
-          backgroundColor: props.backgroundColor,
-        })),
         onClick(btnClass) {
           emit('click', btnClass);
         },

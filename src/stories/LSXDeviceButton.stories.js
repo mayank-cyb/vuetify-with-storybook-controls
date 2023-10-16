@@ -6,14 +6,6 @@ export default {
   component: DeviceButton,
   tags: ['autodocs'],
   argTypes: {
-    orderCount: {
-      control: {
-        type: 'number',
-        min: 0,
-        max: 100,
-        step: 1,
-      },
-    },
     onClick: { action: 'button clicked' },
     btnType: {
       control: {
@@ -29,7 +21,6 @@ export const Button = {
   args: {
     label: 'Button',
     btnType: 'primary',
-    options: 'large',
   },
 };
 

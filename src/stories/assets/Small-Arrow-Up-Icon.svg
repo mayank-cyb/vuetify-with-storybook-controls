@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+  <g id="Small-Arrow-Up-Icon" transform="translate(-873 -1172)">
+    <g id="Group_4482" data-name="Group 4482">
+      <g id="Group_4479" data-name="Group 4479" transform="translate(4 2)">
+        <rect id="Rectangle_3344" data-name="Rectangle 3344" width="20" height="20" transform="translate(869 1170)" fill="none"/>
+      </g>
+      <g id="Group_4480" data-name="Group 4480" transform="translate(1761.864 2364.355) rotate(180)">
+        <path id="Rectangle_3346" data-name="Rectangle 3346" d="M0,0H9a1,1,0,0,1,1,1V1A1,1,0,0,1,9,2H0A0,0,0,0,1,0,2V0A0,0,0,0,1,0,0Z" transform="translate(878.793 1186.355) rotate(-135)"/>
+        <path id="Rectangle_3347" data-name="Rectangle 3347" d="M0,0H9a1,1,0,0,1,1,1V1A1,1,0,0,1,9,2H0A0,0,0,0,1,0,2V0A0,0,0,0,1,0,0Z" transform="translate(877.379 1184.941) rotate(-45)"/>
+      </g>
+    </g>
+  </g>
+</svg>

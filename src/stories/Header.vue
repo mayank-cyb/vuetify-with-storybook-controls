@@ -47,6 +47,9 @@
           size="large"
           :isDisabled="false"
         />
+        <lsx-progress-bar
+          :progress="progressValue"
+        />
       </div>
     </div>
   </header>
@@ -57,7 +60,6 @@ import './header.css';
 import MyButton from './Button.vue';
 import LSXCircularButton from './LSXCircularButton.vue';
 import LSXCountButton from './LSXCountButton.vue';
-//import top-nav-ball from '@/src/stories/assets/Top-Nav-Ball.svg';
 
 export default {
   name: 'my-header',
@@ -72,6 +74,14 @@ export default {
     user: {
       type: Object,
     },
+  },
+
+  setup() {
+    const progressValue = ref(20);
+    console.log(progressValue.value);
+    return {
+      progressValue
+    }
   },
 
   emits: ['login', 'logout', 'createAccount'],

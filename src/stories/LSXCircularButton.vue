@@ -52,13 +52,9 @@
 //import './button.css';
 import "./button.scss";
 import { reactive, computed } from "vue";
-import Icon from "./Icon.vue";
 
 export default {
   name: "circular-button",
-  components: {
-    Icon,
-  },
   props: {
     label: {
       type: String,
