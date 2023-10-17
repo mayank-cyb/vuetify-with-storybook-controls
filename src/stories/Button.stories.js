@@ -28,10 +28,16 @@ export default {
     tooltip: {
       control: {
         showTooltip: true,
-        location: "start",
-        label: "Tooltip"
+        location: 'bottom', //possible locations are "top", "bottom", "start", "end"
+        label: "Tooltip",
       }
     },
+    popOver: {
+      showPopover: {if: {arg: 'tooltip.control.showTooltip' , truthy: false }},
+      hasTitle:  true,
+      title: "Popover Title",
+      label: "Popover label"
+    }
   },
 };
 
@@ -43,8 +49,15 @@ export const Button = {
     options: 'large',
     tooltip: {
       showTooltip: true,
+      label: "Tooltip",
       location: 'bottom',
-      label: "Tooltip"
+      isPopOver: true,
+
+    },
+    popOver: {
+      hasTitle:  true,
+      title: "Popover Title",
+      label: "Popover label"
     }
   },
 };

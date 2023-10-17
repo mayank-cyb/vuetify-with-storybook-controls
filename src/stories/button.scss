@@ -390,6 +390,8 @@
     justify-content: center;
     min-width: 5.375rem !important;
     height: 1.8125rem !important;
+    background-color: $colorTooltipBg !important;
+    border-radius: 0.25rem;
     &::after {
       position: absolute;
       content: '';
@@ -406,7 +408,7 @@
         top: 100%;
         left: 50%;
         transform: translateX(-50%);
-        border-top: .375rem solid red !important;
+        border-top: .375rem solid $colorTooltipBg !important;
       }
     }
   }
@@ -416,7 +418,7 @@
         bottom: 100%;
         left: 50%;
         transform: translateX(-50%);
-        border-bottom: .375rem solid red !important;
+        border-bottom: .375rem solid $colorTooltipBg !important;
       }
     }
   }
@@ -426,8 +428,7 @@
         top: 50%;
         left: 100%;
         transform: translateY(-50%);
-        border-color: transparent;
-        border-left-color: red;
+        border-left-color: $colorTooltipBg;
       }
     }
   }
@@ -437,7 +438,7 @@
         top: 50%;
         right: 100%;
         transform: translateY(-50%);
-        border-right-color: red;
+        border-right-color: $colorTooltipBg;
       }
     }
   }

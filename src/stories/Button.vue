@@ -82,6 +82,11 @@ export default {
     },
     tooltip: {
       type: Object,
+      validator: function (value) {
+        if(value.location) {
+          return ["top", "bottom", "start", "end"].indexOf(value) !== -1;
+        }
+      },
     },
   },
 
