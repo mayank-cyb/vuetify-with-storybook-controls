@@ -15,14 +15,22 @@
         `size-${size}`,
         btnClass,
         btnAppearance,
-        { 'disabled': isDisabled },
+        { disabled: isDisabled },
         { 'on-hover': isHovering },
       ]"
       @click="onClick(btnClass)"
       v-bind="props"
     >
       {{ label }}
-      <v-tooltip activator="parent" location="start">Tooltip</v-tooltip>
+      <template v-if="tooltip.showTooltip">
+        <v-tooltip
+          :class="`v-tooltip--${tooltip.location}`"
+          activator="parent" 
+          :location="tooltip.location"
+        >
+          {{ tooltip.label }}
+        </v-tooltip>
+      </template>
     </v-btn>
   </v-hover>
 </template>
@@ -55,17 +63,25 @@ export default {
     },
     isDisabled: {
       type: Boolean,
-      default: false
+      default: false,
     },
     btnType: {
       type: String,
       validator: function (value) {
         return (
-          ["primary", "secondary", "success", "warning", "danger", "info"].indexOf(
-            value
-          ) !== -1
+          [
+            "primary",
+            "secondary",
+            "success",
+            "warning",
+            "danger",
+            "info",
+          ].indexOf(value) !== -1
         );
       },
+    },
+    tooltip: {
+      type: Object,
     },
   },
 
@@ -103,7 +119,7 @@ export default {
         backgroundColor: props.backgroundColor,
       })),
       onClick(btnClass) {
-        emit('click', btnClass);
+        emit("click", btnClass);
       },
     };
   },

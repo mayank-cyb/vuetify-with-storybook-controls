@@ -23,15 +23,12 @@ export default {
             valueDeterminate
         }
     }
-
 }
-
 </script>
 
 <style lang="scss" scoped>
     .v-progress-linear {
         width: 6.25rem;
         background-color: #D2D8E3;
-
     }
 </style>

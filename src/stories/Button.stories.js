@@ -25,6 +25,13 @@ export default {
       },
       options: ['small', 'large'],
     },
+    tooltip: {
+      control: {
+        showTooltip: true,
+        location: "start",
+        label: "Tooltip"
+      }
+    },
   },
 };
 
@@ -34,14 +41,10 @@ export const Button = {
     label: 'Button',
     btnType: 'primary',
     options: 'large',
+    tooltip: {
+      showTooltip: true,
+      location: 'bottom',
+      label: "Tooltip"
+    }
   },
 };
-
-
-const Template = ({ onClick, ...args }) => ({
-  Component: Button,
-  props: args,
-  on: {
-    ...actionsData,
-  },
-});
