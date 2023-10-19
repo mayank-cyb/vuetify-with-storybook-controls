@@ -15,12 +15,12 @@ export default {
     },
     progressValue: {
         control: {
-          type: 'number',
-          min: 0,
-          max: 100,
-          step: 10,
+            type: 'number',
+            min: 0,
+            max: 100,
+            step: 10,
         },
-      },
+    },
 };
   
   // More on writing stories with args: https://storybook.js.org/docs/vue/writing-stories/args

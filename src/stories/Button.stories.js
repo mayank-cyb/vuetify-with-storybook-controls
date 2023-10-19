@@ -30,14 +30,18 @@ export default {
         showTooltip: true,
         location: 'bottom', //possible locations are "top", "bottom", "start", "end"
         label: "Tooltip",
+        type: 'popOver',  // possible tooltip types are "tooltip", "popOver"
+        hasTitle: true,
+        popoverTitle: "Popover title",
+        popoverText: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
       }
     },
-    popOver: {
-      showPopover: {if: {arg: 'tooltip.control.showTooltip' , truthy: false }},
-      hasTitle:  true,
-      title: "Popover Title",
-      label: "Popover label"
-    }
+    // popOver: {
+    //   showPopover: {if: {arg: 'tooltip.control.showTooltip' , truthy: false }},
+    //   hasTitle:  true,
+    //   title: "Popover Title",
+    //   label: "Popover label"
+    // }
   },
 };
 
@@ -46,18 +50,18 @@ export const Button = {
   args: {
     label: 'Button',
     btnType: 'primary',
-    options: 'large',
     tooltip: {
       showTooltip: true,
+      location: 'bottom', 
       label: "Tooltip",
-      location: 'bottom',
-      isPopOver: true,
-
+      type: 'popOver',
+      hasTitle: true,
+      popoverTitle: "Popover title",
+      popoverText: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
     },
-    popOver: {
-      hasTitle:  true,
-      title: "Popover Title",
-      label: "Popover label"
-    }
+    
   },
 };
+
+
+ // possible tooltip types are "tooltip", "popOver"

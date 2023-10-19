@@ -24,11 +24,30 @@
       {{ label }}
       <template v-if="tooltip.showTooltip">
         <v-tooltip
-          :class="`v-tooltip--${tooltip.location}`"
+          :class="[
+            `v-tooltip--${tooltip.location}`,
+            { 'popover': tooltip.type === 'popOver' },
+            { 'popover--without-title': tooltip.type === 'popOver' && !tooltip.hasTitle },
+            { 'tooltip': tooltip.type === 'tooltip' },
+            { 'popover--with-title': tooltip.type === 'popOver' && tooltip.hasTitle },
+          ]"
           activator="parent" 
           :location="tooltip.location"
         >
-          {{ tooltip.label }}
+          <template v-if="tooltip.type === 'popOver'">
+            <div class="popover-content">
+              <section class="popover-content__title">
+                <h2 v-if="tooltip.hasTitle">{{ tooltip.popoverTitle }}</h2>
+              </section>
+              <section class="popover-content__text">
+                <p>{{ tooltip.popoverText }}</p>
+              </section>
+            </div>
+
+          </template>
+          <template v-else>
+            {{ label }}
+          </template>
         </v-tooltip>
       </template>
     </v-btn>
@@ -97,12 +116,6 @@ export default {
     console.log(props);
     return {
       props,
-      // classes: computed(() => ({
-      //   'storybook-button': true,
-      //   'storybook-button--primary': props.primary,
-      //   'storybook-button--secondary': !props.primary,
-      //   [`storybook-button--${props.size || 'medium'}`]: true,
-      // })),
       btnClass: computed(() => {
         //console.log(props.btnType)
         return props.btnType === "primary"
