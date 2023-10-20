@@ -1,11 +1,18 @@
 import MyButton from './Button.vue';
+import Tooltip from './FSSDTooltip.vue';
+import * as TooltipStory from './FSSDTooltip.stories';
+
 
 // More on how to set up stories at: https://storybook.js.org/docs/vue/writing-stories/introduction
 export default {
-  title: 'Example/Button',
+  title: 'Atoms/Button',
   component: MyButton,
   tags: ['autodocs'],
+  decorators: [() => ({ template: '<div><story/></div>' })],
   argTypes: {
+    // label: {
+    //   control: { type: 'string'},
+    // },
     appearance: {
       control: {
         type: 'select',
@@ -25,41 +32,48 @@ export default {
       },
       options: ['small', 'large'],
     },
-    tooltip: {
+    showTooltip: {
       control: {
-        showTooltip: true,
+        type: 'boolean'
+      },
+    },
+    tooltip: {
+      control: { type: 'object' },
         location: 'bottom', //possible locations are "top", "bottom", "start", "end"
         label: "Tooltip",
-        type: 'popOver',  // possible tooltip types are "tooltip", "popOver"
+        tooltipType: 'popover',  // possible tooltip types are "tooltip", "popover"
         hasTitle: true,
         popoverTitle: "Popover title",
         popoverText: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-      }
-    },
-    // popOver: {
-    //   showPopover: {if: {arg: 'tooltip.control.showTooltip' , truthy: false }},
-    //   hasTitle:  true,
-    //   title: "Popover Title",
-    //   label: "Popover label"
-    // }
+    }
   },
 };
 
 // More on writing stories with args: https://storybook.js.org/docs/vue/writing-stories/args
 export const Button = {
+  // render: () => ({
+  //   components: { MyButton, Tooltip },
+  //   template: '<MyButton v-bind="$props"><Tooltip v-bind="$props" /></MyButton>'
+  // }),
   args: {
     label: 'Button',
     btnType: 'primary',
+    // tooltip: {
+    //   location: { ...TooltipStory.Tooltip.args, location: "top" },
+    //   //label: { ...TooltipStory.Tooltip.args, label: "Tooltip" },
+    //   tooltipType: { ...TooltipStory.Tooltip.args, tooltipType: "popover" },
+    //   hasTitle: { ...TooltipStory.Tooltip.args, hasTitle: "popover" },
+    //   popoverTitle: { ...TooltipStory.Tooltip.args, popoverTitle: "Popover title" },
+    //   popoverText: { ...TooltipStory.Tooltip.args, popoverText: "Lorem Ipsum is simply dummy text of the printing and typesetting industry." },
+    // },
     tooltip: {
-      showTooltip: true,
-      location: 'bottom', 
+      location: 'bottom', //possible locations are "top", "bottom", "start", "end"
       label: "Tooltip",
-      type: 'popOver',
+      tooltipType: 'popover',  // possible tooltip types are "tooltip", "popOver"
       hasTitle: true,
       popoverTitle: "Popover title",
       popoverText: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-    },
-    
+    }
   },
 };
 

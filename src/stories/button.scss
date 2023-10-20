@@ -92,8 +92,20 @@
     height: 1.5rem !important;
   }
   .btn-bar &{ 
-    width: 1.25rem !important;
-    height: 1.25rem !important;
+    width: 0.875rem !important;
+    height: 0.5rem !important;
+  }
+}
+.v-avatar {
+  .btn-device & {
+    max-width: 4.875rem !important;
+    width: 100%;
+    max-height: 3.25rem !important;
+    border-radius: 0;
+  }
+  .multi-line & {
+    width: 1.875rem !important;
+    height: 0.6875rem !important;
   }
 }
 .v-img__img {
@@ -105,19 +117,19 @@
   width: 100%; 
   margin: 0 auto;
   .multi-line & {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 1.875rem;
+    height: 0.6875rem;
   }
-
+  .btn-device & {
+    max-width: 6.875rem;
+    width: 100%;
+    height: 6.875rem;
+  }
 }
 
 
 .btn-primary {
-    //min-width: 5.5rem;
     background-color: $colorPrimary !important;
-
-    // height: 2rem;
-    // border-radius: 2rem;
     &.on-hover {
       background-color: $colorPrimaryHover !important;
     }
@@ -181,7 +193,6 @@
   &.on-hover {
     background-color: $colorInfoHover !important;
   }
-
   &.disabled {
     background-color: $colorInfoDisabled !important;
   }
@@ -236,15 +247,28 @@
     &--circle {
       @extend .btn-primary;
     }
-
+    &--default {
+      &.disabled {
+        background-color: $colorPrimaryDisabled !important;
+        color: $colorWhite !important;
+      }
+    }
     &--outline {
       border: 0.125rem solid $colorPrimary !important;
       background-color: transparent !important;
       color: $colorPrimary !important;
       &.on-hover {
-        color: $colorWhite !important;
+        border-color: $colorOutlinePrimaryHover !important;
+        background-color: transparent !important;
+        color: $colorOutlinePrimaryHover !important;
+      }
+      &.disabled {
+        border-color: $colorOutlinePrimaryDisabled !important;
+        background-color: transparent !important;
+        color: $colorOutlinePrimaryDisabled !important;
       }
     }
+
     &--text {
       @extend .btn-square;
       .order-count {
@@ -261,14 +285,25 @@
     &--circle {
       @extend .btn-secondary;
     }
-
+    &--default {
+      &.disabled {
+        background-color: $colorSecondaryDisabled !important;
+        color: $colorWhite !important;
+      }
+    }
     &--outline {
       border: 0.125rem solid $colorSecondary !important;
       background-color: transparent !important;
       color: $colorSecondary !important;
-
       &.on-hover {
-        color: $colorWhite !important;
+        border-color: $colorOutlineSecondaryHover !important;
+        background-color: transparent !important;
+        color: $colorOutlineSecondaryHover !important;
+      }
+      &.disabled {
+        border-color: $colorOutlineSecondaryDisabled !important;
+        background-color: transparent !important;
+        color: $colorOutlineSecondaryDisabled !important;
       }
     }
     &--text {
@@ -286,13 +321,25 @@
     &--circle {
       @extend .btn-success;
     }
+    &--default {
+      &.disabled {
+        background-color: $colorSuccessDisabled !important;
+        color: $colorWhite !important;
+      }
+    }
     &--outline {
       border: 0.125rem solid $colorSuccess !important;
       background-color: transparent !important;
       color: $colorSuccess !important;
-
       &.on-hover {
-        color: $colorWhite !important;
+        border-color: $colorOutlineSuccessHover !important;
+        background-color: transparent !important;
+        color: $colorOutlineSuccessHover !important;
+      }
+      &.disabled {
+        border-color: $colorOutlineSuccessDisabled !important;
+        background-color: transparent !important;
+        color: $colorOutlineSuccessDisabled !important;
       }
     }
     &--text {
@@ -311,14 +358,25 @@
     &--circle {
       @extend .btn-warning;
     }
-
+    &--default {
+      &.disabled {
+        background-color: $colorWarningDisabled !important;
+        color: $colorWhite !important;
+      }
+    }
     &--outline {
       border: 0.125rem solid $colorWarning !important;
       background-color: transparent !important;
       color: $colorWarning !important;
-
       &.on-hover {
-        color: $colorWhite !important;
+        border-color: $colorOutlineWarningHover !important;
+        background-color: transparent !important;
+        color: $colorOutlineWarningHover !important;
+      }
+      &.disabled {
+        border-color: $colorOutlineWarningDisabled !important;
+        background-color: transparent !important;
+        color: $colorOutlineWarningDisabled !important;
       }
     }
     &--text {
@@ -337,13 +395,25 @@
     &--circle {
       @extend .btn-danger;
     }
+    &--default {
+      &.disabled {
+        background-color: $colorDangerDisabled !important;
+        color: $colorWhite !important;
+      }
+    }    
     &--outline {
       border: 0.125rem solid $colorDanger !important;
       background-color: transparent !important;
       color: $colorDanger !important;
-
       &.on-hover {
-        color: $colorWhite !important;
+        border-color: $colorOutlineDangerHover !important;
+        background-color: transparent !important;
+        color: $colorOutlineDangerHover !important;
+      }
+      &.disabled {
+        border-color: $colorOutlineDangerDisabled !important;
+        background-color: transparent !important;
+        color: $colorOutlineDangerDisabled !important;
       }
     }
     &--text {
@@ -362,15 +432,28 @@
     &--circle {
       @extend .btn-info;
     }
+    &--default {
+      &.disabled {
+        background-color: $colorInfoDisabled !important;
+        color: $colorWhite !important;
+      }
+    }  
     &--outline {
       border: 0.125rem solid $colorInfo !important;
       background-color: transparent !important;
       color: $colorInfo !important;
-
       &.on-hover {
-        color: $colorWhite !important;
+        border-color: $colorOutlineInfoHover !important;
+        background-color: transparent !important;
+        color: $colorOutlineInfoHover !important;
+      }
+      &.disabled {
+        border-color: $colorOutlineInfoDisabled !important;
+        background-color: transparent !important;
+        color: $colorOutlineInfoDisabled !important;
       }
     }
+
     &--text {
       @extend .btn-square;
       .order-count {

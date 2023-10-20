@@ -8,6 +8,10 @@
       <h1 class="text-h2 font-weight-bold">Vuetify</h1>
 
       <div class="py-14" />
+      <Button 
+        showTooltip="true"
+        
+      />
 
       <v-row class="d-flex align-center justify-center">
         <v-col cols="auto">
@@ -71,5 +75,9 @@
 </template>
 
 <script setup>
+import Button from '@/stories/Button.vue';
+component: {
+  Button
+}
   //
 </script>

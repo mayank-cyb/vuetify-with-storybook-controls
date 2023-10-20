@@ -27,7 +27,7 @@
         >
         <!--my-button btnType="primary" size="small" @click="$emit('logout')" label="Log out" v-if="user" />
         <my-button btnType="secondary" size="small" @click="$emit('login')" label="Log in" v-if="!user" /-->
-        <my-button
+        <FSSDButton
           btnType="primary"
           :isDisabled="false"
           @click="$emit('createAccount')"
@@ -57,18 +57,19 @@
 
 <script>
 import './header.css';
-import MyButton from './Button.vue';
+import FSSDButton from './Button.vue';
 import LSXCircularButton from './LSXCircularButton.vue';
 import LSXCountButton from './LSXCountButton.vue';
 
 export default {
   name: 'my-header',
 
-  components: { 
-    MyButton,
+  components: {
+    FSSDButton,
     LSXCircularButton,
-    LSXCountButton
-  },
+    LSXCountButton,
+    FSSDButton
+},
 
   props: {
     user: {

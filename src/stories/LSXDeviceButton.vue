@@ -5,7 +5,7 @@
         :size="size"
         :order-count="orderCount"
         variant="flat"
-        class="btn-sqaure btn-square--large"
+        class="btn-sqaure btn-square--large btn-device"
         :class="[
           `${btnClass}--device`,
           btnClass,
@@ -16,6 +16,9 @@
         @click="onClick(btnClass)"
         v-bind="props"
       >
+        <v-avatar>
+          <v-img :src="image" alt="Icon"></v-img>
+        </v-avatar>
         <span class="text-small order-type">{{ label }}</span>
       </v-btn>
     </v-hover>
@@ -44,6 +47,9 @@
           );
         },
       },
+      image: {
+        type: String,
+      }
     },
   
     emits: ["click"],
@@ -53,12 +59,6 @@
       console.log(props);
       return {
         props,
-        // classes: computed(() => ({
-        //   'storybook-button': true,
-        //   'storybook-button--primary': props.primary,
-        //   'storybook-button--secondary': !props.primary,
-        //   [`storybook-button--${props.size || 'medium'}`]: true,
-        // })),
         btnClass: computed(() => {
           //console.log(props.btnType)
           return props.btnType === "primary"

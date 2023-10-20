@@ -16,9 +16,7 @@
 <script setup>
   import LSXCircularButton from '@/stories/LSXCircularButton.vue';
   import HelloWorld from '@/components/HelloWorld.vue';
-  components: {
-    LSXCircularButton
-  }
+
 </script>
 
 <style lang="scss">

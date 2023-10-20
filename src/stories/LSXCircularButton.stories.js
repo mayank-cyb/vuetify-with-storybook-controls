@@ -2,7 +2,7 @@ import CircularButton from "./LSXCircularButton.vue";
 
 // More on how to set up stories at: https://storybook.js.org/docs/vue/writing-stories/introduction
 export default {
-  title: "Example/LSXCircleButton",
+  title: "Atoms/LSXCircleButton",
   component: CircularButton,
   tags: ["autodocs"],
   argTypes: {
@@ -39,8 +39,8 @@ export default {
         "",
         "mdi-calendar",
         "mdi-clock",
-        "src/stories/assets/Arrow-Up-Icon.svg",
-        "src/stories/assets/Arrow-Down-Icon.svg",
+        "src/assets/Arrow-Up-Icon.svg",
+        "src/assets/Arrow-Down-Icon.svg",
       ],
     },
     image: {
@@ -51,8 +51,10 @@ export default {
         "",
         "mdi-calendar",
         "mdi-clock",
-        "src/stories/assets/Arrow-Up-Icon.svg",
-        "src/stories/assets/Arrow-Dwn-Icon.svg",
+        "src/assets/Arrow-Up-Icon.svg",
+        "src/assets/Arrow-Dwn-Icon.svg",
+        "src/assets/Small-Arrow-Up-Icon.svg",
+        "src/assets/Small-Arrow-Dwn-Icon.svg",
         "src/assets/Top-Nav-Bell.svg",
         "src/assets/Top-Nav-Message.svg",
         "src/assets/Top-Nav-Search.svg",

@@ -22,33 +22,16 @@
       v-bind="props"
     >
       {{ label }}
-      <template v-if="tooltip.showTooltip">
-        <v-tooltip
-          :class="[
-            `v-tooltip--${tooltip.location}`,
-            { 'popover': tooltip.type === 'popOver' },
-            { 'popover--without-title': tooltip.type === 'popOver' && !tooltip.hasTitle },
-            { 'tooltip': tooltip.type === 'tooltip' },
-            { 'popover--with-title': tooltip.type === 'popOver' && tooltip.hasTitle },
-          ]"
-          activator="parent" 
-          :location="tooltip.location"
-        >
-          <template v-if="tooltip.type === 'popOver'">
-            <div class="popover-content">
-              <section class="popover-content__title">
-                <h2 v-if="tooltip.hasTitle">{{ tooltip.popoverTitle }}</h2>
-              </section>
-              <section class="popover-content__text">
-                <p>{{ tooltip.popoverText }}</p>
-              </section>
-            </div>
-
-          </template>
-          <template v-else>
-            {{ label }}
-          </template>
-        </v-tooltip>
+      <template v-if="showTooltip && isHovering">
+        <FSSDTooltip 
+          activator="parent"
+          :location ="tooltip.location"
+          :label="tooltip.label"
+          :tooltipType="tooltip.tooltipType"
+          :hasTitle="tooltip.hasTitle"
+          :popoverTitle="tooltip.popoverTitle"
+          :popoverText="tooltip.popoverText"
+        />
       </template>
     </v-btn>
   </v-hover>
@@ -58,17 +41,22 @@
 //import './button.css';
 import "./button.scss";
 import { reactive, computed } from "vue";
+import FSSDTooltip from "./FSSDTooltip.vue";
 
 export default {
   name: "my-button",
-
+  components: {
+    FSSDTooltip,
+},
   props: {
     label: {
       type: String,
+      default: "Button",
       required: true,
     },
     size: {
       type: String,
+      default: "large",
       validator: function (value) {
         return ["small", "large"].indexOf(value) !== -1;
       },
@@ -86,6 +74,7 @@ export default {
     },
     btnType: {
       type: String,
+      default: "primary",
       validator: function (value) {
         return (
           [
@@ -99,11 +88,22 @@ export default {
         );
       },
     },
+    showTooltip: {
+      type: Boolean,
+      default: true,
+    },
     tooltip: {
       type: Object,
+      default: () => ({
+        location: "bottom",
+        tooltipType: "tooltip"
+      }),
       validator: function (value) {
         if(value.location) {
-          return ["top", "bottom", "start", "end"].indexOf(value) !== -1;
+          return ["top", "bottom", "start", "end"].indexOf(value.location) !== -1;
+        }
+        else if (value.tooltipType) {
+          return ["tooltip", "popover"].indexOf(value.tooltipType) !== -1;
         }
       },
     },
