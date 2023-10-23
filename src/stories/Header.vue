@@ -35,7 +35,7 @@
           v-if="!user"
         />
         <lsx-circular-button
-          btnType="primary"
+          btnType="info"
           size="large"
           :isDisabled="false"
           prependIcon="mdi-calendar"

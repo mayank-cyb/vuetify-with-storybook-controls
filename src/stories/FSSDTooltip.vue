@@ -8,7 +8,7 @@
             { 'popover--with-title': tooltipType === 'popover' && hasTitle },
           ]"
           :location="location"
-          v-bind="$attrs"
+          activator="parent"
         >
           <template v-if="tooltipType === 'popover'">
             <div class="popover-content">
@@ -30,7 +30,6 @@
 <script>
     export default {
         component: 'FSSDTooltip',
-        inheritAttrs: false,
         props: {
             // tooltip: {
             // type: Object,
@@ -40,6 +39,10 @@
             //         }
             //     },
             // },
+        // activator: {
+        //   type: String,
+        //   default: "parent"
+        // },
         location: {
             type: String,
             default: "top",

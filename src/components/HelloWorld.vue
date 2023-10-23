@@ -9,8 +9,9 @@
 
       <div class="py-14" />
       <Button 
-        showTooltip="true"
-        
+        :showTooltip="true"
+        v-bind="tooltip"
+        label="button"
       />
 
       <v-row class="d-flex align-center justify-center">
@@ -69,15 +70,39 @@
             Community
           </v-btn>
         </v-col>
+        <v-col cols="auto">
+          <Button 
+            :showTooltip="true"
+            v-bind="tooltip"
+            label="button"
+          />
+        </v-col>
       </v-row>
     </v-responsive>
   </v-container>
 </template>
 
-<script setup>
+<script>
 import Button from '@/stories/Button.vue';
-component: {
-  Button
+import { ref } from 'vue';
+export default {
+  components: {
+    Button
+  },
+  setup() {
+    const tooltip = ref({
+      location : "bottom",
+      label : "Tooltip",
+      tooltipType : "popover",
+      hasTitle : true,
+      popoverTitle : "Popover title",
+      popoverText : "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    });
+    return {
+      tooltip
+    }
+  }
 }
+
   //
 </script>

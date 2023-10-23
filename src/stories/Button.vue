@@ -23,18 +23,35 @@
     >
       {{ label }}
       <template v-if="showTooltip && isHovering">
-        <FSSDTooltip 
+        <v-tooltip
+          :class="[
+            `v-tooltip--${location}`,
+            { 'popover': tooltip.tooltipType === 'popover' },
+            { 'popover--without-title': tooltip.tooltipType === 'popover' && tooltip.hasTitle },
+            { 'tooltip': tooltip.tooltipType === 'tooltip' },
+            { 'popover--with-title': tooltip.tooltipType === 'popover' && tooltip.hasTitle },
+          ]"
+          :location="tooltip.location"
           activator="parent"
-          :location ="tooltip.location"
-          :label="tooltip.label"
-          :tooltipType="tooltip.tooltipType"
-          :hasTitle="tooltip.hasTitle"
-          :popoverTitle="tooltip.popoverTitle"
-          :popoverText="tooltip.popoverText"
-        />
+        >
+          <template v-if="tooltip.tooltipType === 'popover'">
+            <div class="popover-content">
+              <section class="popover-content__title">
+                <h2 v-if="tooltip.hasTitle">{{ tooltip.popoverTitle }}</h2>
+              </section>
+              <section class="popover-content__text">
+                <p>{{ tooltip.popoverText }}</p>
+              </section>
+            </div>
+          </template>
+          <template v-else>
+            {{ label }}
+          </template>
+        </v-tooltip>
       </template>
     </v-btn>
   </v-hover>
+
 </template>
 
 <script>
@@ -102,8 +119,8 @@ export default {
         if(value.location) {
           return ["top", "bottom", "start", "end"].indexOf(value.location) !== -1;
         }
-        else if (value.tooltipType) {
-          return ["tooltip", "popover"].indexOf(value.tooltipType) !== -1;
+        else if (value.tooltip.tooltipType) {
+          return ["tooltip", "popover"].indexOf(value.tooltip.tooltipType) !== -1;
         }
       },
     },
